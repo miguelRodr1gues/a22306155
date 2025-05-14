@@ -1,0 +1,82 @@
+[
+  {
+    "nome": "Destiny's Child",
+    "genero": "R&B",
+    "ano_formacao": 1990,
+    "nacionalidade": "Estados Unidos",
+    "biografia": "Grupo feminino de R&B que revelou Beyoncé. Conhecido por hits como 'Say My Name' e 'Survivor'.",
+    "foto": ""
+  },
+  {
+    "nome": "Maroon 5",
+    "genero": "Pop",
+    "ano_formacao": 2001,
+    "nacionalidade": "Estados Unidos",
+    "biografia": "Banda pop rock liderada por Adam Levine, com sucessos como 'She Will Be Loved' e 'Sugar'.",
+    "foto": ""
+  },
+  {
+    "nome": "Little Mix",
+    "genero": "Pop",
+    "ano_formacao": 2011,
+    "nacionalidade": "Reino Unido",
+    "biografia": "Girl group britânico formado no X-Factor UK, conhecido por músicas como 'Shout Out to My Ex'.",
+    "foto": ""
+  },
+  {
+    "nome": "Boyz II Men",
+    "genero": "R&B",
+    "ano_formacao": 1988,
+    "nacionalidade": "Estados Unidos",
+    "biografia": "Grupo vocal icônico dos anos 90 com baladas românticas como 'End of the Road'.",
+    "foto": ""
+  },
+  {
+    "nome": "Backstreet Boys",
+    "genero": "Pop",
+    "ano_formacao": 1993,
+    "nacionalidade": "Estados Unidos",
+    "biografia": "Uma das boybands mais famosas do mundo, conhecida por 'I Want It That Way'.",
+    "foto": ""
+  },
+  {
+    "nome": "En Vogue",
+    "genero": "R&B",
+    "ano_formacao": 1989,
+    "nacionalidade": "Estados Unidos",
+    "biografia": "Quarteto feminino de R&B com vocais poderosos e hits como 'Free Your Mind'.",
+    "foto": ""
+  },
+  {
+    "nome": "One Direction",
+    "genero": "Pop",
+    "ano_formacao": 2010,
+    "nacionalidade": "Reino Unido",
+    "biografia": "Boyband formada no X-Factor UK que se tornou um fenômeno mundial com músicas como 'What Makes You Beautiful'.",
+    "foto": ""
+  },
+  {
+    "nome": "TLC",
+    "genero": "R&B",
+    "ano_formacao": 1990,
+    "nacionalidade": "Estados Unidos",
+    "biografia": "Trio feminino com mensagens fortes nas músicas, como 'Waterfalls' e 'No Scrubs'.",
+    "foto": ""
+  },
+  {
+    "nome": "Fifth Harmony",
+    "genero": "Pop",
+    "ano_formacao": 2012,
+    "nacionalidade": "Estados Unidos",
+    "biografia": "Girl group criado no The X-Factor USA, conhecido por 'Work from Home'.",
+    "foto": ""
+  },
+  {
+    "nome": "Silk Sonic",
+    "genero": "R&B",
+    "ano_formacao": 2021,
+    "nacionalidade": "Estados Unidos",
+    "biografia": "Dupla formada por Bruno Mars e Anderson .Paak, unindo soul e R&B modernos com estilo retrô.",
+    "foto": ""
+  }
+]

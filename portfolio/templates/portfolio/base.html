@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Portfolio - Miguel Rodrigues{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff;
+            color: #111;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: #000;
+            padding: 1.2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #fff;
+            background-color: #000;
+            padding: 1rem;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            margin-left: auto;
+        }
+
+        nav a {
+            position: relative;
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.4rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #fff;
+            background-color: #000;
+        }
+
+        /* Menu Hambúrguer */
+        .menu-toggle {
+            display: none;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .hamburger span {
+            height: 3px;
+            width: 25px;
+            background: #000;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: flex;
+                flex-direction: column;
+                background-color: #fff;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 1rem 2rem;
+                visibility: hidden;
+                opacity: 0;
+                transition: opacity 0.3s ease, visibility 0s 0.3s;
+            }
+
+            .menu-toggle:checked + .hamburger + nav {
+                visibility: visible;
+                opacity: 1;
+                transition: opacity 0.3s ease, visibility 0s 0s;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            header h1 {
+                font-size: 1.2rem;
+                width: 50px;
+                height: 50px;
+                padding: 0.8rem;
+            }
+
+            nav a {
+                margin: 10px 0;
+                font-size: 1rem;
+            }
+        }
+
+        main {
+            padding: 1rem 0;
+        }
+
+        footer {
+            background-color: #f5f5f5;
+            color: #555;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        footer p {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+    </style>
+
+    {% block extra_css %} {% endblock %}
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MR</h1>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav>
+                <a href="{% url 'portfolio:index' %}">Home</a>
+                <a href="{% url 'portfolio:sobre' %}">Sobre</a>
+                <a href="{% url 'portfolio:projetos' %}">Projetos</a>
+                <a href="{% url 'portfolio:tecnologias' %}">Tecnologias</a>
+                <a href="{% url 'portfolio:curriculo' %}">Curriculo</a>
+                <a href="{% url 'portfolio:interesses' %}">Interesses</a>
+            </nav>
+        </header>
+
+        <main>
+            {% block main %} {% endblock %}
+        </main>
+
+        <footer>
+            <p>&copy; {{ data }} - Miguel's Portfolio</p>
+            <p>Total de visitantes únicos: {{ total_visitantes }}</p>
+        </footer>
+    </div>
+</body>
+</html>

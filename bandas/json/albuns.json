@@ -1,0 +1,487 @@
+[
+  {
+    "titulo": "Survivor",
+    "ano_lancamento": 2001,
+    "banda": "Destiny's Child",
+    "musicas": [
+      {
+        "titulo": "Survivor",
+        "duracao": "00:04:00",
+        "letra": "I'm a survivor, I won't give up the fight."
+      },
+      {
+        "titulo": "Bootylicious",
+        "duracao": "00:03:27",
+        "letra": "Bootylicious, I know you want this."
+      },
+      {
+        "titulo": "Independent Women Part I",
+        "duracao": "00:03:41",
+        "letra": "I'm an independent woman, I don't need anyone."
+      }
+    ]
+  },
+  {
+    "titulo": "Songs About Jane",
+    "ano_lancamento": 2002,
+    "banda": "Maroon 5",
+    "musicas": [
+      {
+        "titulo": "Harder to Breathe",
+        "duracao": "00:02:55",
+        "letra": "It's getting harder to breathe, but I need you near."
+      },
+      {
+        "titulo": "This Love",
+        "duracao": "00:03:26",
+        "letra": "This love, it burns me down."
+      },
+      {
+        "titulo": "She Will Be Loved",
+        "duracao": "00:04:18",
+        "letra": "She will be loved, with all my heart."
+      }
+    ]
+  },
+  {
+    "titulo": "Glory Days",
+    "ano_lancamento": 2016,
+    "banda": "Little Mix",
+    "musicas": [
+      {
+        "titulo": "Shout Out to My Ex",
+        "duracao": "00:04:06",
+        "letra": "Shout out to my ex, I’m better off alone."
+      },
+      {
+        "titulo": "Touch",
+        "duracao": "00:04:03",
+        "letra": "Touch, everything feels right with you."
+      },
+      {
+        "titulo": "Power",
+        "duracao": "00:04:02",
+        "letra": "We got the power, we’re unstoppable."
+      }
+    ]
+  },
+  {
+    "titulo": "II",
+    "ano_lancamento": 1994,
+    "banda": "Boyz II Men",
+    "musicas": [
+      {
+        "titulo": "I'll Make Love to You",
+        "duracao": "00:04:07",
+        "letra": "I'll make love to you, just say the word."
+      },
+      {
+        "titulo": "On Bended Knee",
+        "duracao": "00:05:29",
+        "letra": "On bended knee, I'm begging for your love."
+      },
+      {
+        "titulo": "Water Runs Dry",
+        "duracao": "00:03:22",
+        "letra": "Water runs dry, but my love for you won't fade."
+      }
+    ]
+  },
+  {
+    "titulo": "Millennium",
+    "ano_lancamento": 1999,
+    "banda": "Backstreet Boys",
+    "musicas": [
+      {
+        "titulo": "I Want It That Way",
+        "duracao": "00:03:33",
+        "letra": "I want it that way, you know it’s true."
+      },
+      {
+        "titulo": "Larger Than Life",
+        "duracao": "00:03:52",
+        "letra": "Larger than life, we live for the moment."
+      },
+      {
+        "titulo": "Show Me the Meaning of Being Lonely",
+        "duracao": "00:03:56",
+        "letra": "Show me the meaning of being lonely, without you."
+      }
+    ]
+  },
+  {
+    "titulo": "Funky Divas",
+    "ano_lancamento": 1992,
+    "banda": "En Vogue",
+    "musicas": [
+      {
+        "titulo": "Free Your Mind",
+        "duracao": "00:04:53",
+        "letra": "Free your mind, and let the music take control."
+      },
+      {
+        "titulo": "My Lovin' (You're Never Gonna Get It)",
+        "duracao": "00:04:42",
+        "letra": "My lovin', you’re never gonna get it."
+      },
+      {
+        "titulo": "Giving Him Something He Can Feel",
+        "duracao": "00:03:56",
+        "letra": "Giving him something, that he can feel."
+      }
+    ]
+  },
+  {
+    "titulo": "Up All Night",
+    "ano_lancamento": 2011,
+    "banda": "One Direction",
+    "musicas": [
+      {
+        "titulo": "What Makes You Beautiful",
+        "duracao": "00:03:18",
+        "letra": "What makes you beautiful? It's your smile."
+      },
+      {
+        "titulo": "One Thing",
+        "duracao": "00:03:17",
+        "letra": "I want one thing, just you and me."
+      },
+      {
+        "titulo": "Gotta Be You",
+        "duracao": "00:04:00",
+        "letra": "I gotta be you, there's no one else."
+      }
+    ]
+  },
+  {
+    "titulo": "CrazySexyCool",
+    "ano_lancamento": 1994,
+    "banda": "TLC",
+    "musicas": [
+      {
+        "titulo": "Creep",
+        "duracao": "00:04:27",
+        "letra": "I creep, I keep it low and slow."
+      },
+      {
+        "titulo": "Red Light Special",
+        "duracao": "00:04:39",
+        "letra": "Under the red light, we feel the heat."
+      },
+      {
+        "titulo": "Waterfalls",
+        "duracao": "00:04:40",
+        "letra": "Don't go chasing waterfalls, stay safe."
+      }
+    ]
+  },
+  {
+    "titulo": "Reflection",
+    "ano_lancamento": 2015,
+    "banda": "Fifth Harmony",
+    "musicas": [
+      {
+        "titulo": "Worth It",
+        "duracao": "00:03:45",
+        "letra": "I’m worth it, worth every second with you."
+      },
+      {
+        "titulo": "BO$$",
+        "duracao": "00:02:51",
+        "letra": "I'm a boss, I don’t need permission."
+      },
+      {
+        "titulo": "Sledgehammer",
+        "duracao": "00:03:51",
+        "letra": "Hit me like a sledgehammer, love is strong."
+      }
+    ]
+  },
+  {
+    "titulo": "7/27",
+    "ano_lancamento": 2016,
+    "banda": "Fifth Harmony",
+    "musicas": [
+      {
+        "titulo": "Work from Home",
+        "duracao": "00:03:34",
+        "letra": "Work from home, but I need you here."
+      },
+      {
+        "titulo": "All In My Head (Flex)",
+        "duracao": "00:03:31",
+        "letra": "It’s all in my head, can’t get you out."
+      },
+      {
+        "titulo": "That's My Girl",
+        "duracao": "00:03:23",
+        "letra": "That’s my girl, strong and proud."
+      }
+    ]
+  },
+  {
+    "titulo": "An Evening with Silk Sonic",
+    "ano_lancamento": 2021,
+    "banda": "Silk Sonic",
+    "musicas": [
+      {
+        "titulo": "Leave the Door Open",
+        "duracao": "00:04:02",
+        "letra": "Leave the door open, baby, come on in."
+      },
+      {
+        "titulo": "Smokin Out the Window",
+        "duracao": "00:03:17",
+        "letra": "Smokin' out the window, can't take it no more."
+      },
+      {
+        "titulo": "Fly As Me",
+        "duracao": "00:03:39",
+        "letra": "Fly as me, we’re on another level."
+      }
+    ]
+  },
+  {
+    "titulo": "Survivor",
+    "ano_lancamento": 2001,
+    "banda": "Destiny's Child",
+    "musicas": [
+      {
+        "titulo": "Survivor",
+        "duracao": "00:04:00",
+        "letra": "I'm a survivor, I won't give up the fight."
+      },
+      {
+        "titulo": "Bootylicious",
+        "duracao": "00:03:27",
+        "letra": "Bootylicious, I know you want this."
+      },
+      {
+        "titulo": "Independent Women Part I",
+        "duracao": "00:03:41",
+        "letra": "I'm an independent woman, I don't need anyone."
+      }
+    ]
+  },
+  {
+    "titulo": "Songs About Jane",
+    "ano_lancamento": 2002,
+    "banda": "Maroon 5",
+    "musicas": [
+      {
+        "titulo": "Harder to Breathe",
+        "duracao": "00:02:55",
+        "letra": "It's getting harder to breathe, but I need you near."
+      },
+      {
+        "titulo": "This Love",
+        "duracao": "00:03:26",
+        "letra": "This love, it burns me down."
+      },
+      {
+        "titulo": "She Will Be Loved",
+        "duracao": "00:04:18",
+        "letra": "She will be loved, with all my heart."
+      }
+    ]
+  },
+  {
+    "titulo": "Glory Days",
+    "ano_lancamento": 2016,
+    "banda": "Little Mix",
+    "musicas": [
+      {
+        "titulo": "Shout Out to My Ex",
+        "duracao": "00:04:06",
+        "letra": "Shout out to my ex, I’m better off alone."
+      },
+      {
+        "titulo": "Touch",
+        "duracao": "00:04:03",
+        "letra": "Touch, everything feels right with you."
+      },
+      {
+        "titulo": "Power",
+        "duracao": "00:04:02",
+        "letra": "We got the power, we’re unstoppable."
+      }
+    ]
+  },
+  {
+    "titulo": "II",
+    "ano_lancamento": 1994,
+    "banda": "Boyz II Men",
+    "musicas": [
+      {
+        "titulo": "I'll Make Love to You",
+        "duracao": "00:04:07",
+        "letra": "I'll make love to you, just say the word."
+      },
+      {
+        "titulo": "On Bended Knee",
+        "duracao": "00:05:29",
+        "letra": "On bended knee, I'm begging for your love."
+      },
+      {
+        "titulo": "Water Runs Dry",
+        "duracao": "00:03:22",
+        "letra": "Water runs dry, but my love for you won't fade."
+      }
+    ]
+  },
+  {
+    "titulo": "Millennium",
+    "ano_lancamento": 1999,
+    "banda": "Backstreet Boys",
+    "musicas": [
+      {
+        "titulo": "I Want It That Way",
+        "duracao": "00:03:33",
+        "letra": "I want it that way, you know it’s true."
+      },
+      {
+        "titulo": "Larger Than Life",
+        "duracao": "00:03:52",
+        "letra": "Larger than life, we live for the moment."
+      },
+      {
+        "titulo": "Show Me the Meaning of Being Lonely",
+        "duracao": "00:03:56",
+        "letra": "Show me the meaning of being lonely, without you."
+      }
+    ]
+  },
+  {
+    "titulo": "Funky Divas",
+    "ano_lancamento": 1992,
+    "banda": "En Vogue",
+    "musicas": [
+      {
+        "titulo": "Free Your Mind",
+        "duracao": "00:04:53",
+        "letra": "Free your mind, and let the music take control."
+      },
+      {
+        "titulo": "My Lovin' (You're Never Gonna Get It)",
+        "duracao": "00:04:42",
+        "letra": "My lovin', you’re never gonna get it."
+      },
+      {
+        "titulo": "Giving Him Something He Can Feel",
+        "duracao": "00:03:56",
+        "letra": "Giving him something, that he can feel."
+      }
+    ]
+  },
+  {
+    "titulo": "Up All Night",
+    "ano_lancamento": 2011,
+    "banda": "One Direction",
+    "musicas": [
+      {
+        "titulo": "What Makes You Beautiful",
+        "duracao": "00:03:18",
+        "letra": "What makes you beautiful? It's your smile."
+      },
+      {
+        "titulo": "One Thing",
+        "duracao": "00:03:17",
+        "letra": "I want one thing, just you and me."
+      },
+      {
+        "titulo": "Gotta Be You",
+        "duracao": "00:04:00",
+        "letra": "I gotta be you, there's no one else."
+      }
+    ]
+  },
+  {
+    "titulo": "CrazySexyCool",
+    "ano_lancamento": 1994,
+    "banda": "TLC",
+    "musicas": [
+      {
+        "titulo": "Creep",
+        "duracao": "00:04:27",
+        "letra": "I creep, I keep it low and slow."
+      },
+      {
+        "titulo": "Red Light Special",
+        "duracao": "00:04:39",
+        "letra": "Under the red light, we feel the heat."
+      },
+      {
+        "titulo": "Waterfalls",
+        "duracao": "00:04:40",
+        "letra": "Don't go chasing waterfalls, stay safe."
+      }
+    ]
+  },
+  {
+    "titulo": "Reflection",
+    "ano_lancamento": 2015,
+    "banda": "Fifth Harmony",
+    "musicas": [
+      {
+        "titulo": "Worth It",
+        "duracao": "00:03:45",
+        "letra": "I’m worth it, worth every second with you."
+      },
+      {
+        "titulo": "BO$$",
+        "duracao": "00:02:51",
+        "letra": "I'm a boss, I don’t need permission."
+      },
+      {
+        "titulo": "Sledgehammer",
+        "duracao": "00:03:51",
+        "letra": "Hit me like a sledgehammer, love is strong."
+      }
+    ]
+  },
+  {
+    "titulo": "7/27",
+    "ano_lancamento": 2016,
+    "banda": "Fifth Harmony",
+    "musicas": [
+      {
+        "titulo": "Work from Home",
+        "duracao": "00:03:34",
+        "letra": "Work from home, but I need you here."
+      },
+      {
+        "titulo": "All In My Head (Flex)",
+        "duracao": "00:03:31",
+        "letra": "It’s all in my head, can’t get you out."
+      },
+      {
+        "titulo": "That's My Girl",
+        "duracao": "00:03:23",
+        "letra": "That’s my girl, strong and proud."
+      }
+    ]
+  },
+  {
+    "titulo": "An Evening with Silk Sonic",
+    "ano_lancamento": 2021,
+    "banda": "Silk Sonic",
+    "musicas": [
+      {
+        "titulo": "Leave the Door Open",
+        "duracao": "00:04:02",
+        "letra": "Leave the door open, baby, come on in."
+      },
+      {
+        "titulo": "Smokin Out the Window",
+        "duracao": "00:03:17",
+        "letra": "Smokin' out the window, can't take it no more."
+      },
+      {
+        "titulo": "Fly As Me",
+        "duracao": "00:03:39",
+        "letra": "Fly as me, we’re on another level."
+      }
+    ]
+  }
+]
+

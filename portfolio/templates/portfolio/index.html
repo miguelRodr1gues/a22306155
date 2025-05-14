@@ -1,0 +1,109 @@
+{% extends 'portfolio/base.html' %}
+
+{% block title %}Início - Miguel Rodrigues{% endblock %}
+
+{% block extra_css %}
+<style>
+    main {
+        max-width: 800px;
+        margin: 2rem auto 3rem auto;
+        padding: 2rem 2rem;
+        background-color: #fff;
+        border-radius: 30px;
+        box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        animation: fadeIn 1.5s ease-out;
+        position: relative;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    main h2 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: #222;
+        letter-spacing: 1.5px;
+        animation: fadeInTitle 1.5s ease-out;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        color: #333;
+    }
+
+    @keyframes fadeInTitle {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    main p {
+        font-size: 1.3rem;
+        margin-bottom: 1.8rem;
+        color: #555;
+        line-height: 1.8;
+        text-align: justify;
+        transition: color 0.3s ease;
+    }
+
+    /* Estilos para os ícones */
+    .main-icons {
+        display: flex;
+        gap: 10px;
+        margin-top: 2rem;
+    }
+
+    .main-icons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f4f4f4;
+        padding: 10px;
+        border-radius: 10px;
+        color: #555;
+        font-size: 1.8rem;
+        transition: color 0.3s ease;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .main-icons a:hover {
+        background-color: #d1d1d1;
+    }
+</style>
+{% endblock %}
+
+{% block main %}
+    <h2>Miguel Rodrigues</h2>
+    <p class="subtitle">Engenheiro Informático</p>
+    <p>Tenho um grande interesse por tecnologia e estou a aprender a construir experiências incríveis na web.</p>
+    <p>Partilho aqui os projetos e conhecimentos que fui desenvolvendo ao longo do meu percurso académico e pessoal.</p>
+    <p>Sou apaixonado por programação, especialmente na área de back-end, e estou sempre em busca de novos desafios que me permitam crescer como profissional e contribuir com soluções inovadoras.</p>
+
+    <div class="main-icons">
+        <a href="https://www.linkedin.com/in/miguel-rodrigues-700b952bb" target="_blank">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/miguelRodr1gues" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:miguel.rodrigues103@hotmail.com">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+{% endblock %}

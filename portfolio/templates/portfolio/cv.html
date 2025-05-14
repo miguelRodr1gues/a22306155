@@ -1,0 +1,180 @@
+{% extends "portfolio/base.html" %}
+
+{% block main %}
+<style>
+
+  .cv-wrapper {
+    max-width: 1000px;
+    margin: 40px auto;
+    display: flex;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', sans-serif;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .left-column {
+    background-color: #f4f4f4;
+    padding: 30px;
+    width: 30%;
+    color: #333;
+  }
+
+  .right-column {
+    padding: 40px;
+    width: 70%;
+    color: #111;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+
+  h2 {
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-top: 25px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    color: #555;
+  }
+
+  h3 {
+    font-size: 16px;
+    margin-bottom: 3px;
+  }
+
+  p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 6px;
+  }
+
+  .section-label {
+    font-weight: bold;
+    margin-top: 15px;
+    display: block;
+  }
+
+  .contact-info, .skills, .languages, .hobbies {
+    font-size: 14px;
+  }
+
+  .custom-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 14px;
+   }
+
+   .custom-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+   }
+
+</style>
+
+<div class="cv-wrapper">
+  <div class="left-column">
+    <h2>Contacts</h2>
+    <div class="contact-info">
+      <p>📞 936 287 457</p>
+      <p>📧 miguel.rodrigues103@hotmail.com</p>
+      <p>🌍 Lisboa</p>
+      <p>
+         <a href="https://www.linkedin.com/in/miguel-rodrigues-700b952bb" target="_blank" style="text-decoration: none; color: inherit;">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" style="width: 18px; vertical-align: middle; margin-right: 6px;">
+            LinkedIn
+         </a>
+      </p>
+
+    </div>
+
+    <h2>Programming</h2>
+    <ul>
+      <li>Front-end: React, Next.js, Tailwind</li>
+      <li>Back-end: Java, Kotlin, C, C#</li>
+      <li>DataBase: MySQL, MSSQL</li>
+    </ul>
+
+    <h2>Skills</h2>
+    <ul class="skills">
+      <li>Resolução de Problemas</li>
+      <li>Trabalho em Equipa</li>
+      <li>Comunicação</li>
+    </ul>
+
+    <h2>Languages</h2>
+    <ul class="languages">
+      <li>Português Nativo</li>
+      <li>Inglês Intermédio</li>
+    </ul>
+
+    <h2>Hobbies</h2>
+    <ul class="hobbies">
+      <li>Gaming</li>
+      <li>Programação</li>
+    </ul>
+  </div>
+
+  <div class="right-column">
+    <h1>Miguel Rodrigues</h1>
+    <h3>Estudante de Engenharia Informática</h3>
+
+    <h2>Perfil</h2>
+    <p>
+      Sou estudante de Engenharia Informática, apaixonado por programação e resolução de problemas.
+      Ao longo dos meus estudos, desenvolvi competências em Kotlin, Java, desenvolvimento web e gestão de bases de dados MSSQL.
+    </p>
+    <p>
+      Em Kotlin, ajudei a desenvolver um jogo de Batalha Naval, implementando a lógica e a interação com o utilizador.
+      Em Java, criei um framework de leitura de ficheiros com foco em eficiência e precisão.
+      Também desenvolvi um projeto com React e Next.js para interfaces web dinâmicas.
+    </p>
+    <p>
+      Trabalhei com bases de dados MSSQL, realizando gestão de dados e consultas complexas.
+      Estes projetos reforçaram as minhas competências de programação, trabalho em equipa e resolução de problemas.
+    </p>
+
+    <h2>Educação</h2>
+
+    <h3>Engenharia Informática | Universidade Lusófona</h3>
+    <p class="data">Set 2023 – Jun 2026</p>
+    <p>
+      Tenho aprofundado os meus conhecimentos em linguagens como Java, C e Kotlin. Este percurso académico tem desenvolvido as minhas competências práticas e teóricas num ambiente dinâmico, promovendo o crescimento pessoal, a resolução de problemas e o trabalho em equipa.
+    </p>
+
+    <h3>Ciências e Tecnologias | Externato de Penafirme</h3>
+    <p class="data">Set 2019 – Jun 2022</p>
+    <p>
+      Estudei Ciências e Tecnologias, uma área na qual desenvolvi interesse pela programação. No 12.º ano, tive a oportunidade de adquirir conhecimentos nesta área através de uma disciplina específica, onde aprendi os conceitos básicos de programação.
+      Esta experiência foi essencial para despertar o meu interesse em seguir uma carreira nesta área.
+    </p>
+
+    <h2>Mais Sobre Mim</h2>
+    <div style="display: flex; gap: 20px; margin-top: 20px; flex-wrap: wrap;">
+      <a href="{% url 'portfolio:projetos' %}" class="custom-button">Ver Projetos</a>
+      <a href="{% url 'portfolio:tecnologias' %}" class="custom-button">Tecnologias que Domino</a>
+    </div>
+
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,172 @@
+{% extends "portfolio/base.html" %}
+
+{% block extra_css %}
+<style>
+    .container {
+        padding: 3rem;
+    }
+
+    .tecnologia {
+        background-color: #fff;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .tecnologia img {
+        height: 60px;
+        width: auto;
+        border-radius: 5px;
+    }
+
+    /* Apenas para a imagem do Java */
+    .java-img {
+        width: 60px;
+        object-fit: cover;
+    }
+
+    .tecnologia-info {
+        flex: 1;
+    }
+
+    .tecnologia-info h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: #2575fc;
+    }
+
+    .tecnologia-info p {
+        margin: 0.5rem 0;
+        color: #555;
+        font-size: 1rem;
+    }
+
+    .tecnologia-info a {
+        color: #2575fc;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .tecnologia-info a:hover {
+        color: #6a11cb;
+    }
+
+    ul.projetos-associados {
+        margin-top: 0.5rem;
+        padding-left: 1rem;
+    }
+
+    ul.projetos-associados li {
+        font-size: 0.95rem;
+        color: #444;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 2rem;
+        }
+
+        .tecnologia {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .tecnologia img {
+            height: 50px;
+        }
+
+        .java-img {
+            width: 50px;
+        }
+
+        .tecnologia-info h2 {
+            font-size: 1.2rem;
+        }
+    }
+
+    /* Estilo para o botão de adicionar tecnologia */
+    .btn-adicionar {
+        background-color: #2575fc;
+        color: #fff;
+        padding: 0.6rem 1.2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s ease;
+    }
+
+    .btn-adicionar:hover {
+        background-color: #1a5ed9;
+    }
+
+    /* Estilo para os botões de editar e apagar */
+    .btn-editar, .btn-apagar {
+        background-color: #6a11cb;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-left: 0.5rem;
+        transition: background 0.3s ease;
+    }
+
+    .btn-editar:hover, .btn-apagar:hover {
+        background-color: #4e09a7;
+    }
+
+    .btn-apagar {
+        background-color: #e44d56;
+    }
+
+    .btn-apagar:hover {
+        background-color: #c0392b;
+    }
+</style>
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <h1 style="margin: 0;">Tecnologias</h1>
+        <a href="{% url 'portfolio:criar_tecnologia' %}" class="btn-adicionar">+ Adicionar Tecnologia</a>
+    </div>
+
+    {% for tecnologia in tecnologias %}
+        <div class="tecnologia">
+            <img src="{{ tecnologia.logotipo.url }}" alt="{{ tecnologia.nome }}"
+                 class="{% if tecnologia.nome == 'Java' %}java-img{% endif %}">
+            <div class="tecnologia-info">
+                <h2>{{ tecnologia.nome }}</h2>
+                {% if tecnologia.link %}
+                    <p><a href="{{ tecnologia.link }}" target="_blank">Saber mais</a></p>
+                {% endif %}
+                <p>{{ tecnologia.descricao }}</p>
+
+                {% with tecnologia.nomes_projetos_associados as projetos %}
+                    {% if projetos %}
+                        <p><strong>Projetos que usam esta tecnologia:</strong></p>
+                        <ul class="projetos-associados">
+                            {% for titulo in projetos %}
+                                <li>{{ titulo }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            </div>
+
+            <div class="actions" style="margin-left: auto;">
+                <a href="{% url 'portfolio:editar_tecnologia' tecnologia.pk %}" class="btn-editar">Editar</a>
+                <a href="{% url 'portfolio:apagar_tecnologia' tecnologia.pk %}" class="btn-apagar">Apagar</a>
+            </div>
+        </div>
+    {% empty %}
+        <p>Não há tecnologias registadas no momento.</p>
+    {% endfor %}
+</div>
+{% endblock %}
