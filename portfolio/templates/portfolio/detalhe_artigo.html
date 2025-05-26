@@ -1,0 +1,139 @@
+{% extends 'portfolio/base.html' %}
+
+{% block main %}
+  <style>
+    .form-box {
+      max-width: 800px;
+      margin: 2rem auto;
+      background-color: #111;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    h2 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #222;
+      color: #fff;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical; 
+      min-height: 150px;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      background-color: #2a2a2a;
+      box-shadow: 0 0 0 2px #555;
+    }
+
+    button[type="submit"] {
+      margin-top: 20px;
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      background-color: #fff;
+      color: #111;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #ddd;
+    }
+
+    .comentarios {
+      max-width: 800px;
+      margin: 2rem auto;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .comentario {
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .comentario strong {
+      color: #ccc;
+    }
+
+    .avaliacao-media {
+      text-align: center;
+      margin: 1rem auto;
+      font-size: 1.2rem;
+      color: #ffc107;
+    }
+  </style>
+
+  <h1 style="text-align: center; color: #fff;">{{ artigo.titulo }}</h1>
+  <p style="text-align: center; color: #aaa;">Por {{ artigo.autor.nome }} — {{ artigo.criado_em|date:"d M Y H:i" }}</p>
+
+  <div class="form-box">
+    <h2>Comentar e/ou Avaliar</h2>
+    <form method="post">
+      {% csrf_token %}
+      
+      {{ comentario_form.non_field_errors }}
+      <label for="{{ comentario_form.conteudo.id_for_label }}">Comentário</label>
+      {{ comentario_form.conteudo.errors }}
+      {{ comentario_form.conteudo }}
+
+      {{ avaliacao_form.non_field_errors }}
+      <label for="{{ avaliacao_form.valor.id_for_label }}">Avaliação</label>
+      {{ avaliacao_form.valor.errors }}
+      {{ avaliacao_form.valor }}
+
+      <button type="submit">Submeter</button>
+    </form>
+  </div>
+
+  {% if media_avaliacoes %}
+    <div class="avaliacao-media">
+      Média de Avaliações: {{ media_avaliacoes|floatformat:1 }} ⭐
+    </div>
+  {% endif %}
+
+  <div class="comentarios">
+    <h2 style="color: #fff; text-align: center;">Comentários</h2>
+    {% for comentario in comentarios %}
+      <div class="comentario">
+        <strong>{{ comentario.autor.nome }}</strong> - {{ comentario.criado_em|date:"d M Y H:i" }}<br>
+        {{ comentario.conteudo }}
+      </div>
+    {% empty %}
+      <p style="color: #999; text-align: center;">Ainda não há comentários neste artigo.</p>
+    {% endfor %}
+  </div>
+{% endblock %}

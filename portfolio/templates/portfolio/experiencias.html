@@ -157,23 +157,31 @@
 {% block main %}
 <div class="container">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-        <h1 style="margin: 0;">Projetos</h1>
-        <a href="{% url 'portfolio:criar_projeto' %}" class="btn-adicionar">+ Adicionar Projeto</a>
+        <h1 style="margin: 0;">Experiencias</h1>
+        <a href="{% url 'portfolio:criar_experiencia' %}" class="btn-adicionar">+ Adicionar Experiencia</a>
     </div>
 
-    {% for projeto in projetos %}
+    {% for experiencia in experiencias %}
         <div class="projeto">
-            <h2>{{ projeto.titulo }}</h2>
-            <p><strong>Disciplina:</strong> {{ projeto.disciplina.nome }} ({{ projeto.disciplina.ano }}º ano - {{ projeto.disciplina.semestre }}º semestre)</p>
-            <p><strong>Descrição:</strong> {{ projeto.descricao }}</p>
-            <p><strong>Conceitos Aplicados:</strong> {{ projeto.conceitos_aplicados }}</p>
-            <p><strong>Desafios Interessantes:</strong> {{ projeto.desafios_interessantes }}</p>
+            <h2>{{ experiencia.empresa }}</h2>
+            <p><strong>Cargo:</strong> {{ experiencia.cargo }}</p>
+            <p><strong>Descricao:</strong> {{ experiencia.descricao }}</p>
 
+             {% if experiencia.projetos.all %}
+                <p><strong>Projetos Feitos:</strong></p>
+                <ul>
+                    {% for projeto in experiencia.projetos.all %}
+                        <li>
+                            {{ projeto.titulo }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
 
-            {% if projeto.tecnologias_utilizadas.all %}
+            {% if experiencia.tecnologias.all %}
                 <p><strong>Tecnologias Utilizadas:</strong></p>
                 <ul>
-                    {% for tecnologia in projeto.tecnologias_utilizadas.all %}
+                    {% for tecnologia in experiencia.tecnologias.all %}
                         <li>
                             <img src="{{ tecnologia.logotipo.url }}" alt="{{ tecnologia.nome }}">
                             {{ tecnologia.nome }}
@@ -182,11 +190,8 @@
                 </ul>
             {% endif %}
 
-
-
             <div style="display: flex; gap: 1rem; justify-content: flex-start; margin-top: 1rem;">
-                <a href="{% url 'portfolio:editar_projeto' projeto.pk %}" class="btn-editar">Editar projeto</a>
-                <a href="{% url 'portfolio:apagar_projeto' projeto.pk %}" class="btn-apagar">Apagar projeto</a>
+                <a href="{% url 'portfolio:editar_experiencia' experiencia.pk %}" class="btn-editar">Editar Experiencia</a>
             </div>
 
             <hr>

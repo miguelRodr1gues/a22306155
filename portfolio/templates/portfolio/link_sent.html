@@ -1,0 +1,56 @@
+{% extends 'portfolio/base.html' %}
+
+{% block title %}Link Enviado - Miguel Rodrigues{% endblock %}
+
+{% block extra_css %}
+<style>
+  .login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+  }
+
+  .login-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .login-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #111;
+  }
+
+  .login-card p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  .login-card a {
+    color: #000;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+
+  .login-card a:hover {
+    color: #333;
+  }
+</style>
+{% endblock %}
+
+{% block main %}
+<div class="login-wrapper">
+  <div class="login-card">
+    <h2>Verifica o teu e-mail 📬</h2>
+    <p>Enviámos um link mágico para entrares. Clica no link para continuar.</p>
+    <p>Não recebeste? <a href="{% url 'portfolio:request_magic_link' %}">Pede outro link</a></p>
+  </div>
+</div>
+{% endblock %}

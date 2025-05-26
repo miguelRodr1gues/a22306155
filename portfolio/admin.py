@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Disciplina, Tecnologia, Projeto, ImagemProjeto, Visitante
+from .models import Disciplina, Tecnologia, Projeto, ImagemProjeto, Visitante, Experiencia
 
 
 @admin.register(Disciplina)
@@ -37,3 +37,12 @@ class VisitanteAdmin(admin.ModelAdmin):
     list_display = ('ip_address', 'data')
     search_fields = ('ip_address',)
     ordering = ('-data',)
+
+
+@admin.register(Experiencia)
+class ExperienciaAdmin(admin.ModelAdmin):
+    list_display = ('empresa', 'cargo', 'descricao')
+    search_fields = ('empresa', 'cargo')
+    list_filter = ('dataInicio', 'dataFim')
+
+

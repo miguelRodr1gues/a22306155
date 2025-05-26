@@ -1,6 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.utils import timezone
+import uuid
+from datetime import timedelta
 
 
+# -- Modelo para criação de projetos e tecnologias
 class Disciplina(models.Model):
     nome = models.CharField(max_length=100)
     ano = models.IntegerField(choices=[(1, '1º Ano'), (2, '2º Ano'), (3, '3º Ano')])
@@ -55,3 +60,34 @@ class Visitante(models.Model):
 
     def __str__(self):
         return self.ip_address
+
+
+# --- Model Experiencia ---
+class Experiencia(models.Model):
+
+    empresa = models.CharField(max_length=200)
+    cargo = models.CharField(max_length=200)
+    descricao = models.TextField()
+    dataInicio = models.DateTimeField(auto_now_add=True)
+    dataFim = models.DateTimeField(auto_now_add=True)
+    projetos = models.ManyToManyField(Projeto, blank=True, related_name='experiencias')
+    tecnologias = models.ManyToManyField(Tecnologia, blank=True, related_name='experiencias')
+
+
+# -- Token Temporário para Link Mágico
+
+class MagicLinkToken(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    token = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    used = models.BooleanField(default=False)  # marca se o token já foi usado
+
+    @property
+    def expira_em(self):
+        return self.created_at + timedelta(minutes=15)
+
+    def is_valid(self):
+        return not self.used and timezone.now() < self.expira_em
+
+    def __str__(self):
+        return f"Token para {self.user.email} (usado: {self.used})"

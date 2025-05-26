@@ -92,11 +92,11 @@
     }
   </style>
 
-  <h2>{{ form.instance.pk|yesno:"Editar Projeto,Criar Projeto" }}</h2>
+  <h2>{{ form.instance.pk|yesno:"Editar Experiencia, Criar Experiencia" }}</h2>
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">{{ form.instance.pk|yesno:"Atualizar Projeto,Criar Projeto" }}</button>
+    <button type="submit">{{ form.instance.pk|yesno:"Atualizar Experiencia,Criar Experiencia" }}</button>
   </form>
-  <a href="{% url 'portfolio:projetos' %}" class="back-button">Voltar</a>
+  <a href="{% url 'portfolio:experiencias' %}" class="back-button">Voltar</a>
 {% endblock %}

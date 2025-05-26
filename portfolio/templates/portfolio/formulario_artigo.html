@@ -1,0 +1,107 @@
+{% extends 'portfolio/base.html' %}
+
+{% block main %}
+  <style>
+    form {
+      max-width: 800px;
+      margin: 2rem auto;
+      background-color: #111;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    h2 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #222;
+      color: #fff;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      background-color: #2a2a2a;
+      box-shadow: 0 0 0 2px #555;
+    }
+
+    button[type="submit"] {
+      margin: 20px 0 0 0;
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      background-color: #fff;
+      color: #111;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #ddd;
+    }
+
+    a.back-button {
+      display: block;
+      text-align: center;
+      margin: 1rem auto 0 auto;
+      background-color: #111;
+      color: #fff;
+      padding: 0.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      width: fit-content;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    a.back-button:hover {
+      background-color: #222;
+      color: #fff;
+    }
+  </style>
+
+  <h2>{{ form.instance.pk|yesno:"Editar Artigo,Criar Artigo" }}</h2>
+  <form method="post">
+    {% csrf_token %}
+
+    <label for="{{ form.titulo.id_for_label }}">Título</label>
+    {{ form.titulo.errors }}
+    {{ form.titulo }}
+
+    <label for="{{ form.conteudo.id_for_label }}">Conteúdo</label>
+    {{ form.conteudo.errors }}
+    {{ form.conteudo }}
+
+    <button type="submit">{{ form.instance.pk|yesno:"Atualizar Artigo,Criar Artigo" }}</button>
+  </form>
+
+  <a href="{% url 'portfolio:artigos' %}" class="back-button">Voltar</a>
+{% endblock %}
