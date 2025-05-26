@@ -33,6 +33,10 @@ INSTALLED_APPS = [
     "allauth.socialaccount.providers.google",
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://a22306155.pw.deisi.ulusofona.pt",
+]
+
 # django-extensions para gerar diagrama
 GRAPH_MODELS = {
     'all_applications': True,
@@ -95,19 +99,29 @@ TEMPLATES = [
 WSGI_APPLICATION = "project.wsgi.application"
 
 # Base de dados
-DATABASES = {
-    'default': {
-        'ENGINE': config('DB_ENGINE', default='django.db.backends.mysql'),
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='3306'),
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
+DB_ENGINE = config('DB_ENGINE', default='django.db.backends.sqlite3')
+
+if DB_ENGINE == 'django.db.backends.sqlite3':
+    DATABASES = {
+        'default': {
+            'ENGINE': DB_ENGINE,
+            'NAME': BASE_DIR / config('DB_NAME', default='db.sqlite3'),
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': DB_ENGINE,
+            'NAME': config('DB_NAME'),
+            'USER': config('DB_USER', default=''),
+            'PASSWORD': config('DB_PASSWORD', default=''),
+            'HOST': config('DB_HOST', default='localhost'),
+            'PORT': config('DB_PORT', default='3306'),
+            'OPTIONS': {
+                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            },
+        }
+    }
 
 # Validação de senhas
 AUTH_PASSWORD_VALIDATORS = [
