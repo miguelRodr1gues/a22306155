@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Testes da Aplicação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #004d99;
+        }
+        pre {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: Consolas, monospace;
+        }
+        section {
+            margin-bottom: 2rem;
+            padding: 1rem 1.5rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Testes da Aplicação</h1>
+
+    <section>
+        <h2>Introdução aos Tipos de Teste</h2>
+        <p>No desenvolvimento de software, os testes são essenciais para garantir a qualidade e o funcionamento correto da aplicação. Existem vários tipos de testes, entre os quais destacam-se:</p>
+        <ul>
+            <li><strong>Testes unitários:</strong> verificam o comportamento correto de unidades isoladas de código, como funções ou métodos.</li>
+            <li><strong>Testes de integração:</strong> validam a interação entre diferentes componentes ou módulos da aplicação.</li>
+            <li><strong>Testes funcionais ou de sistema:</strong> verificam o funcionamento da aplicação como um todo, simulando o uso real.</li>
+            <li><strong>Testes end-to-end:</strong> testam toda a aplicação do início ao fim, incluindo interface, lógica e base de dados.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Testes de Integração Desenvolvidos</h2>
+        <p>Foram criados testes que verificam o funcionamento integrado de modelos, URLs e views, assegurando que as principais rotas e páginas da aplicação funcionam corretamente e exibem os dados esperados.</p>
+        <p>Os testes confirmaram que:</p>
+        <ul>
+            <li>As URLs estão bem configuradas e direcionam para as views certas;</li>
+            <li>As views retornam o código HTTP 200 com os templates corretos;</li>
+            <li>Os conteúdos importantes são exibidos nas páginas.</li>
+        </ul>
+
+        <h3>Exemplo de Teste de Integração</h3>
+        <pre><code>import pytest
+from django.urls import reverse
+from django.test import Client
+
+@pytest.mark.django_db
+def test_artigo_detalhe_view():
+    client = Client()
+    response = client.get(reverse('artigo_detalhe', args=[5]))
+    assert response.status_code == 200
+    content = response.content.decode()
+    assert "NEGAO" in content
+    assert "Bernardo Jerónimo" in content
+    assert "artigos/artigo_detalhe.html" in [t.name for t in response.templates]
+</code></pre>
+    </section>
+
+    <section>
+        <h2>Cobertura dos Testes</h2>
+        <p>Para medir a cobertura dos testes, utilizei o pacote <code>coverage</code> seguindo estes passos:</p>
+        <ol>
+            <li>Instalar o pacote com <code>pip install coverage</code>;</li>
+            <li>Executar os testes com cobertura usando <code>coverage run manage.py test</code>;</li>
+            <li>Visualizar o relatório no terminal com <code>coverage report</code>;</li>
+            <li>Opcionalmente, gerar relatório visual em HTML com <code>coverage html</code> e abrir o ficheiro <code>htmlcov/index.html</code> no navegador.</li>
+        </ol>
+        <p>A cobertura obtida foi satisfatória, garantindo que as partes principais da aplicação estão testadas e a funcionar conforme esperado.</p>
+    </section>
+
+</body>
+</html>

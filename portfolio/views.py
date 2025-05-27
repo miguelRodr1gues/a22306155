@@ -27,7 +27,7 @@ def is_superuser(user):
 
 # --- Pagina de Testes ---
 def pagina_testes(request):
-    return render(request, 'testes.html')
+    return render(request, 'portfolio/testes.html')
 
 
 # --- Pagina de Experiencia ---
