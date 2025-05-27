@@ -9,7 +9,7 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = config("DEBUG", default=False, cast=bool)
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="localhost", cast=Csv())
 
-# Apps instaladas
+# Aplicações instaladas
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -19,29 +19,19 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_extensions",
 
-    # Aplicações
+    # Aplicações locais
     "pessoas",
     "bandas",
     "artigos",
     "noobsite",
     "portfolio",
 
-    # Google login
+    # Autenticação com Google
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
 ]
-
-CSRF_TRUSTED_ORIGINS = [
-    "https://a22306155.pw.deisi.ulusofona.pt",
-]
-
-# django-extensions para gerar diagrama
-GRAPH_MODELS = {
-    'all_applications': True,
-    'group_models': True,
-}
 
 # Middleware
 MIDDLEWARE = [
@@ -56,7 +46,7 @@ MIDDLEWARE = [
     "allauth.account.middleware.AccountMiddleware",
 ]
 
-# Autenticação
+# Configuração de autenticação
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
@@ -71,7 +61,7 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-# Login
+# Login e redirecionamento
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '/portfolio/login/'
 LOGOUT_REDIRECT_URL = '/portfolio/login/'
@@ -98,28 +88,28 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "project.wsgi.application"
 
-# Base de dados
-DB_ENGINE = config('DB_ENGINE', default='django.db.backends.sqlite3')
+# Base de dados (MySQL ou SQLite, conforme .env)
+DB_ENGINE = config('DB_ENGINE', default='sqlite')
 
-if DB_ENGINE == 'django.db.backends.sqlite3':
+if DB_ENGINE == 'mysql':
     DATABASES = {
         'default': {
-            'ENGINE': DB_ENGINE,
-            'NAME': BASE_DIR / config('DB_NAME', default='db.sqlite3'),
-        }
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': DB_ENGINE,
+            'ENGINE': 'django.db.backends.mysql',
             'NAME': config('DB_NAME'),
-            'USER': config('DB_USER', default=''),
-            'PASSWORD': config('DB_PASSWORD', default=''),
+            'USER': config('DB_USER'),
+            'PASSWORD': config('DB_PASSWORD'),
             'HOST': config('DB_HOST', default='localhost'),
             'PORT': config('DB_PORT', default='3306'),
             'OPTIONS': {
                 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
             },
+        }
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / config('DB_NAME', default='db.sqlite3'),
         }
     }
 
@@ -137,7 +127,7 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
 
-# Envio de email
+# Envio de e-mails
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = config("EMAIL_HOST", default="smtp.gmail.com")
 EMAIL_PORT = config("EMAIL_PORT", default=587, cast=int)
@@ -151,6 +141,17 @@ STATIC_ROOT = '/home/Dr1gues/project/static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/home/Dr1gues/project/media'
+
+# django-extensions (ex: para gerar diagrama de modelos)
+GRAPH_MODELS = {
+    'all_applications': True,
+    'group_models': True,
+}
+
+# CSRF trusted origins
+CSRF_TRUSTED_ORIGINS = [
+    "https://a22306155.pw.deisi.ulusofona.pt",
+]
 
 # Auto field default
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

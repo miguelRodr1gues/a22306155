@@ -72,7 +72,6 @@ def editar_experiencia(request, pk):
 
 
 # --- Pagina de Artigos ---
-@login_required(login_url='portfolio:login')
 def artigos(request):
     lista_artigos = Artigo.objects.select_related('autor').order_by('-criado_em')
     return render(request, 'portfolio/artigos.html', {'artigos': lista_artigos})
