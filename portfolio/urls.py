@@ -6,8 +6,8 @@ app_name = 'portfolio'
 urlpatterns = [
 
     # --- Testes ---
-    path('testes/', views.pagina_testes, name='pagina_testes'),
-    
+    path('testes/', views.pagina_testes, name='testes'),
+
     # --- Experiencias ---
     path('experiencia/', views.experiencias, name='experiencias'),
     path('experiencia/novo/', views.criar_experiencia, name='criar_experiencia'),
