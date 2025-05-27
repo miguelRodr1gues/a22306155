@@ -48,6 +48,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "portfolio.middleware.ContadorVisitantesMiddleware",
+
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 # Autenticação
@@ -64,6 +66,10 @@ SOCIALACCOUNT_PROVIDERS = {
         'AUTH_PARAMS': {'access_type': 'online'},
     }
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://a22306155.pw.deisi.ulusofona.pt",
+]
 
 # Login
 LOGIN_URL = 'login'
