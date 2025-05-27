@@ -8,7 +8,7 @@ SECRET_KEY = config("SECRET_KEY", default="unsafe-dev-key")
 DEBUG = config("DEBUG", default=True, cast=bool)
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="localhost", cast=Csv())
 
-# Apps instaladas
+# Aplicações instaladas
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -18,26 +18,27 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_extensions",
 
-    # Aplicações
+    # Aplicações próprias
     "pessoas",
     "bandas",
     "artigos",
     "noobsite",
     "portfolio",
 
-    # Google login
+    # Autenticação social
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
 ]
 
-# django-extensions para gerar diagrama
+# Configuração do django-extensions (diagrama de modelos)
 GRAPH_MODELS = {
     'all_applications': True,
     'group_models': True,
 }
 
+# Middleware
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -47,7 +48,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "portfolio.middleware.ContadorVisitantesMiddleware",
-    "allauth.account.middleware.AccountMiddleware",  # <- NÃO EXISTE
 ]
 
 # Autenticação
@@ -70,8 +70,10 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '/portfolio/login/'
 LOGOUT_REDIRECT_URL = '/portfolio/login/'
 
+# URLs
 ROOT_URLCONF = "project.urls"
 
+# Templates
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -83,30 +85,24 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                'portfolio.context_processors.total_visitantes',
+                "portfolio.context_processors.total_visitantes",
             ],
         },
     },
 ]
 
+# WSGI
 WSGI_APPLICATION = "project.wsgi.application"
 
-# Base de dados
+# Base de dados (agora em SQLite)
 DATABASES = {
     'default': {
-        'ENGINE': config('DB_ENGINE', default='django.db.backends.mysql'),
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='3306'),
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
-# Validação de senha
+# Validação de senhas
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
@@ -118,6 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
 USE_I18N = True
+USE_L10N = True
 USE_TZ = True
 
 # Envio de email
@@ -133,6 +130,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/home/Dr1gues/project/media'
+MEDIA_ROOT = BASE_DIR / 'media'  # Corrigido para ser relativo ao projeto
 
+# ID padrão para novos modelos
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
