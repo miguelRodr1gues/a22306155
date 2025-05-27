@@ -25,6 +25,10 @@ def is_superuser(user):
     return user.is_authenticated and user.is_superuser
 
 
+# --- Pagina de Testes ---
+def pagina_testes(request):
+    return render(request, 'testes.html')
+
 
 # --- Pagina de Experiencia ---
 def experiencias(request):
